@@ -1,0 +1,5 @@
+  - scenario: Create Savings Account TC 5 - Individual Savings Created
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 0m
+    iterations: 1

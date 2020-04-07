@@ -1,0 +1,30 @@
+
+  Create Savings Account TC 5 - Individual Savings Created:
+    follow-redirects: true
+    requests:
+      - url: '${BASE_URL}/api/v1/auth?username=jsmith@demo.io&password=Demo123!'
+        method: POST
+        label: 1. Authenticate API User
+        headers:
+          Content-Type: application/json
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true
+        extract-jsonpath:
+          authToken: 'authToken'
+      - url: '${BASE_URL}/api/v1/user/account'
+        method: POST
+        label: 2. Create Savings Account
+        headers:
+          Authorization: Bearer ${authToken}
+          Content-Type: application/json
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 25, "ownerTypeCode": "IND" }'
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true

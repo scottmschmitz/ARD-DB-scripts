@@ -1,0 +1,5 @@
+  - scenario: Create Savings Account TC 8 - Individual Savings Not Created - Initial Deposit Less Than Zero
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 0m
+    iterations: 1

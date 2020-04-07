@@ -1,0 +1,38 @@
+---
+settings:
+    env:
+      BASE_URL: http://104.196.211.245:8080/bank
+reporting:
+  - module: junit-xml
+    filename: result.xml
+    data-source: pass-fail
+modules:
+  cloud:
+    report-name: CreateSavingsAccount Test Report
+    test: CreateSavingsAccount Test
+execution:
+  - scenario: Smoke Tests 1
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1
+  - scenario: Smoke Tests 2
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1
+  - scenario: Smoke Tests 3
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1
+  - scenario: Smoke Tests 4
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1
+  - scenario: Smoke Tests 5
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1

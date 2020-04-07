@@ -1,0 +1,5 @@
+  - scenario: Create Savings Account TC 1 - Individual Money Market Not Created - Minimum Deposit Not Met
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 0m
+    iterations: 1

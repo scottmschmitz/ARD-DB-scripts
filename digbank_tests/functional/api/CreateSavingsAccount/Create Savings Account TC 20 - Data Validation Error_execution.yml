@@ -1,0 +1,5 @@
+  - scenario: Create Savings Account TC 20 - Data Validation Error
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 0m
+    iterations: 1

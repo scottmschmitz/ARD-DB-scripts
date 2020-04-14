@@ -1,0 +1,114 @@
+---
+scenarios:
+
+  Success 1:
+    follow-redirects: true
+    requests:
+  Success 1:
+    follow-redirects: true
+    requests:
+      - url: '${BASE_URL}/api/v1/auth?username=^LoginUser::data_email_address^&password=Demo123!'
+        method: POST
+        label: 2. Authenticate API User
+        headers:
+          Content-Type: application/json
+        extract-jsonpath:
+          authToken: 'authToken'
+      - url: '${BASE_URL}/api/v1/auth?username=admin@demo.io&password=Demo123!'
+        method: POST
+        label: 2. Authenticate User
+        headers:
+          Content-Type: application/json
+        extract-jsonpath:
+          authToken: 'authToken'
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true
+  Success 1:
+    follow-redirects: true
+    requests:
+      - url: '${BASE_URL}/api/v1/auth?username=admin@demo.io&password=Demo123!'
+        method: POST
+        label: 4. Authenticate API User
+        headers:
+          Content-Type: application/json
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true
+        extract-jsonpath:
+          authToken: 'authToken'
+      - url: '${BASE_URL}/api/v1/user?role=API'
+        method: POST
+        label: 5. Create API User
+        headers:
+          Authorization: Bearer ${authToken}
+          Content-Type: application/json
+        body: '{ "address": "^CreateUser::data_address^", "country": "^CreateUser::data_country^", "dob": "^CreateUser::data_dob^", "emailAddress": "^CreateUser::data_email_address^", "firstName": "^CreateUser::data_first_name^", "gender": "^CreateUser::data_gender^", "homePhone": "^CreateUser::data_phone_home^", "lastName": "^CreateUser::data_last_name^", "locality": "^CreateUser::data_locality^", "mobilePhone": "^CreateUser::data_phone_mobile^", "password": "^CreateUser::data_password^", "postalCode": "^CreateUser::data_postal_code^", "region": "^CreateUser::data_region^", "ssn": "^CreateUser::data_ssn^", "title": "^CreateUser::data_title^", "workPhone": "^CreateUser::data_phone_work^" }'
+        assert:
+         - contains:
+           - '201'
+           subject: http-code
+           regexp: true
+           assume-success: true
+        extract-jsonpath:
+          userId: 'id'
+        extract-jsonpath:
+          username: 'username'
+  Success 1:
+    follow-redirects: true
+    requests:
+      - url: '${BASE_URL}/api/v1/auth?username=^LoginUser ::data_email_address^&password=Demo123!'
+        method: POST
+        label: 7. Authenticate API User
+        headers:
+          Content-Type: application/json
+        extract-jsonpath:
+          authToken: 'authToken'
+      - url: '${BASE_URL}/api/v1/auth?username=${username}&password=Demo123!'
+        method: POST
+        label: 7. Authenticate User
+        headers:
+          Content-Type: application/json
+        extract-jsonpath:
+          authToken: 'authToken'
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true
+  Success 1:
+    follow-redirects: true
+    requests:
+      - url: '${BASE_URL}/api/v1/auth?username=jsmith@demo.io&password=Demo123!'
+        method: POST
+        label: 9. Authenticate API User
+        headers:
+          Content-Type: application/json
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true
+        extract-jsonpath:
+          authToken: 'authToken'
+      - url: '${BASE_URL}/api/v1/user/account'
+        method: POST
+        label: 10. Create Savings Account
+        headers:
+          Authorization: Bearer ${authToken}
+          Content-Type: application/json
+        body: '{ "accountName": "^CreateSavingsAccount::data_acct_name^", "accountTypeCode": "^CreateSavingsAccount::data_acct_type^", "openingDeposit": ^CreateSavingsAccount::data_init_deposit^, "ownerTypeCode": "^CreateSavingsAccount::data_acct_ownership^" }'
+        assert:
+         - contains:
+           - '200'
+           subject: http-code
+           regexp: true
+           assume-success: true

@@ -1,0 +1,18 @@
+---
+settings:
+    env:
+      BASE_URL: http://34.94.0.144:8081
+reporting:
+  - module: junit-xml
+    filename: result.xml
+    data-source: pass-fail
+modules:
+  cloud:
+    report-name: CreateNewUserwithSavingsAccount Test Report
+    test: CreateNewUserwithSavingsAccount Test
+execution:
+  - scenario: Success 1
+    concurrency: 2
+    ramp-up: 1s
+    hold-for: 2m
+    iterations: -1

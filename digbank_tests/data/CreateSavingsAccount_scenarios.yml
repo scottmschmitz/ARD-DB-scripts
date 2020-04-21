@@ -23,13 +23,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 2061, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 1093, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '406'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 2 :
     follow-redirects: true
@@ -53,13 +55,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -52, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -92, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '400'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 3 :
     follow-redirects: true
@@ -90,6 +94,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 4 :
     follow-redirects: true
@@ -113,13 +119,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 3321, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 3693, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '200'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 5 :
     follow-redirects: true
@@ -150,6 +158,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 6 :
     follow-redirects: true
@@ -173,13 +183,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 525, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 360, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '200'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 7 :
     follow-redirects: true
@@ -203,13 +215,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 1, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 8, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '406'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 8 :
     follow-redirects: true
@@ -233,13 +247,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -97, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -24, "ownerTypeCode": "IND" }'
         assert:
          - contains:
            - '400'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 9 :
     follow-redirects: true
@@ -270,6 +286,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 10 :
     follow-redirects: true
@@ -293,13 +311,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 1181, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 1463, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '406'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 11 :
     follow-redirects: true
@@ -323,13 +343,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -35, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -18, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '400'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 12 :
     follow-redirects: true
@@ -360,6 +382,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 13 :
     follow-redirects: true
@@ -383,13 +407,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 2673, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 3579, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '200'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 14 :
     follow-redirects: true
@@ -420,6 +446,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 15 :
     follow-redirects: true
@@ -443,13 +471,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 913, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 244, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '200'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 16 :
     follow-redirects: true
@@ -473,13 +503,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 8, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 23, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '406'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 17 :
     follow-redirects: true
@@ -503,13 +535,15 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -100, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -43, "ownerTypeCode": "JNT" }'
         assert:
          - contains:
            - '400'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 18 :
     follow-redirects: true
@@ -540,6 +574,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 19 :
     follow-redirects: true
@@ -570,6 +606,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 20 :
     follow-redirects: true
@@ -600,6 +638,8 @@ scenarios:
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv
 
   Create Savings Account TC 21 :
     follow-redirects: true
@@ -623,10 +663,12 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings !)%*$)!*", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "" }'
+        body: '{ "accountName": "AKP Savings ()%%%$", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "" }'
         assert:
          - contains:
            - '400'
            subject: http-code
            regexp: true
            assume-success: true
+    data-sources:
+    - data.csv

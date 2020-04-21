@@ -1,7 +1,7 @@
 ---
 settings:
     env:
-      BASE_URL: http://104.196.211.245:8080
+      BASE_URL: http://104.196.211.245:8080/bank
 reporting:
   - module: junit-xml
     filename: result.xml

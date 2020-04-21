@@ -4,7 +4,7 @@ scenarios:
   Smoke Tests 1:
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username={ExecID}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=${ExecID}&password=Demo123!'
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -37,7 +37,7 @@ scenarios:
   Smoke Tests 2:
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username={ExecID}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=${ExecID}&password=Demo123!'
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -69,7 +69,7 @@ scenarios:
   Smoke Tests 3:
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username={ExecID}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=${ExecID}&password=Demo123!'
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -101,7 +101,7 @@ scenarios:
   Smoke Tests 4:
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username={ExecID}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=${ExecID}&password=Demo123!'
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -133,7 +133,7 @@ scenarios:
   Smoke Tests 5:
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username={ExecID}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=${ExecID}&password=Demo123!'
         method: POST
         label: 1. Authenticate API User
         headers:

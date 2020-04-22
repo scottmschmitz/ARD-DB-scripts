@@ -1,3 +1,5 @@
+def flow {
+
 def token = login()
 echo token
 
@@ -6,7 +8,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -21,6 +23,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -91,7 +94,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -99,7 +104,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -114,6 +119,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -184,7 +190,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -192,7 +200,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -207,6 +215,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -277,7 +286,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -285,7 +296,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -300,6 +311,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -370,7 +382,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -378,7 +392,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -393,6 +407,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -463,7 +478,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -471,7 +488,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -486,6 +503,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -556,7 +574,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -564,7 +584,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -579,6 +599,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -649,7 +670,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -657,7 +680,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -672,6 +695,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -742,7 +766,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -750,7 +776,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -765,6 +791,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -835,7 +862,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -843,7 +872,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -858,6 +887,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -928,7 +958,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -936,7 +968,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -951,6 +983,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1021,7 +1054,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1029,7 +1064,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1044,6 +1079,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1114,7 +1150,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1122,7 +1160,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1137,6 +1175,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1207,7 +1246,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1215,7 +1256,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1230,6 +1271,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1300,7 +1342,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1308,7 +1352,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1323,6 +1367,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1393,7 +1438,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1401,7 +1448,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1416,6 +1463,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1486,7 +1534,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1494,7 +1544,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1509,6 +1559,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1579,7 +1630,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1587,7 +1640,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1602,6 +1655,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1672,7 +1726,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1680,7 +1736,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1695,6 +1751,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1765,7 +1822,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1773,7 +1832,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1788,6 +1847,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1858,7 +1918,9 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef token = login()
+}//end reserveDatadef flow {
+
+def token = login()
 echo token
 
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
@@ -1866,7 +1928,7 @@ echo modelKeyId
 
 if (modelKeyId = 0) {
 // no record found, must Generate new record
-   def jobId = def publishData(2387, 2388, 2398)     
+   def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
   def status = FALSE
   while (status != 'Completed') {
@@ -1881,6 +1943,7 @@ if (modelKeyId = 0) {
 
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+}
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',

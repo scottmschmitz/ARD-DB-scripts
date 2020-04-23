@@ -27,7 +27,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -52,7 +52,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -86,7 +85,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -127,7 +126,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -152,7 +151,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -186,7 +184,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -227,7 +225,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -252,7 +250,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -286,7 +283,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -327,7 +324,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -352,7 +349,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -386,7 +382,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -427,7 +423,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -452,7 +448,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -486,7 +481,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -527,7 +522,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -552,7 +547,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -586,7 +580,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -627,7 +621,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -652,7 +646,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -686,7 +679,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -727,7 +720,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -752,7 +745,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -786,7 +778,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -827,7 +819,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -852,7 +844,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -886,7 +877,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -927,7 +918,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -952,7 +943,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -986,7 +976,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1027,7 +1017,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1052,7 +1042,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1086,7 +1075,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1127,7 +1116,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1152,7 +1141,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1186,7 +1174,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1227,7 +1215,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1252,7 +1240,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1286,7 +1273,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1327,7 +1314,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1352,7 +1339,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1386,7 +1372,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1427,7 +1413,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1452,7 +1438,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1486,7 +1471,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1527,7 +1512,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1552,7 +1537,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1586,7 +1570,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1627,7 +1611,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1652,7 +1636,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1686,7 +1669,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1727,7 +1710,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1752,7 +1735,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1786,7 +1768,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1827,7 +1809,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1852,7 +1834,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1886,7 +1867,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1927,7 +1908,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -1952,7 +1933,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1986,7 +1966,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -2027,7 +2007,7 @@ def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 def execId = fetchData(2387, 2388, reservationId)
 
 return execId
-}
+}//end fnr
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -2052,7 +2032,6 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -2086,7 +2065,7 @@ def login(){
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',

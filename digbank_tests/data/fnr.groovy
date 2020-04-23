@@ -39,11 +39,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -51,8 +50,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -139,11 +139,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -151,8 +150,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -239,11 +239,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -251,8 +250,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -339,11 +339,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -351,8 +350,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -439,11 +439,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -451,8 +450,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -539,11 +539,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -551,8 +550,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -639,11 +639,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -651,8 +650,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -739,11 +739,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -751,8 +750,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -839,11 +839,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -851,8 +850,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -939,11 +939,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -951,8 +950,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1039,11 +1039,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1051,8 +1050,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1139,11 +1139,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1151,8 +1150,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1239,11 +1239,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1251,8 +1250,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1339,11 +1339,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1351,8 +1350,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1439,11 +1439,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1451,8 +1450,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1539,11 +1539,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1551,8 +1550,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1639,11 +1639,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1651,8 +1650,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1739,11 +1739,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1751,8 +1750,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1839,11 +1839,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1851,8 +1850,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -1939,11 +1939,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -1951,8 +1950,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -2039,11 +2039,10 @@ def login(){
               token = body['token']
               return token
     } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
-      stage('find data'){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' + name +''',"entityName":"account","schema":"dbo","dataSource":"SDS","operator":"IN_VALUES","values":["Family Checking"]}],
+ ,"filters":[{"attributeName":''' + id +''',"entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
@@ -2051,8 +2050,9 @@ def login(){
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId
+	modelKeyId = body['id']
 	return modelKeyId
-      }
+
     }//end findDatadef publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",

@@ -1,35 +1,38 @@
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -102,38 +105,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -206,38 +212,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -310,38 +319,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -414,38 +426,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -518,38 +533,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -622,38 +640,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -726,38 +747,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -830,38 +854,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -934,38 +961,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1038,38 +1068,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1142,38 +1175,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1246,38 +1282,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1350,38 +1389,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1454,38 +1496,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1558,38 +1603,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1662,38 +1710,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1766,38 +1817,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1870,38 +1924,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1974,38 +2031,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -2078,38 +2138,41 @@ def reserveData(String projectId, String versionId, String modelId, String envir
                 echo response.content + ' ' + reservationId
 	return reservationId
 }//end reserveData
-def fnr = {
+fnr = {
 
+def modelKeyId=''
+def jobId=''
+def status=''
+def reservationId=''
+def execId=''
 def token = login()
 echo token
 
-def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record
-   def jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
-  def status = FALSE
+
   while (status != 'Completed') {
     // Check job status
     sleep(500)
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  def modelKeyId = findData(2387, 2388, 212, DigitalBank)
+  modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
 // reserve the data
-def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
 // get the login (email address) to return
-def execId = fetchData(2387, 2388, reservationId)
+execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
-
-
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'

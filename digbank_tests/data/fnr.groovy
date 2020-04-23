@@ -6,7 +6,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -106,7 +106,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -206,7 +206,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -306,7 +306,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -406,7 +406,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -506,7 +506,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -606,7 +606,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -706,7 +706,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -806,7 +806,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -906,7 +906,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1006,7 +1006,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1106,7 +1106,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1206,7 +1206,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1306,7 +1306,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1406,7 +1406,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1506,7 +1506,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1606,7 +1606,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1706,7 +1706,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1806,7 +1806,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -1906,7 +1906,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
@@ -2006,7 +2006,7 @@ echo token
 def modelKeyId = findData(2387, 2388, 212, DigitalBank)
 echo modelKeyId
 
-if (modelKeyId = 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
    def jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete

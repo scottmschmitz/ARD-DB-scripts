@@ -1,4 +1,4 @@
-def fnr = {
+def fnr(){
 
 def modelKeyId=''
 def jobId=''
@@ -24,7 +24,7 @@ if (modelKeyId == 0) {
   // generate complete, find Data again
   modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
-}
+  } // end while
 // reserve the data
 reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 

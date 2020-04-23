@@ -1,4 +1,4 @@
-def fnr {
+def fnr = {
 
 def token = login()
 echo token
@@ -98,7 +98,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -198,7 +198,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -298,7 +298,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -398,7 +398,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -498,7 +498,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -598,7 +598,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -698,7 +698,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -798,7 +798,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -898,7 +898,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -998,7 +998,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1098,7 +1098,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1198,7 +1198,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1298,7 +1298,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1398,7 +1398,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1498,7 +1498,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1598,7 +1598,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1698,7 +1698,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1798,7 +1798,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1898,7 +1898,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token
@@ -1998,7 +1998,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr {
+}//end reserveDatadef fnr = {
 
 def token = login()
 echo token

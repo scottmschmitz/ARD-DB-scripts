@@ -1,4 +1,4 @@
-def flow {
+def fnr {
 
 def token = login()
 echo token
@@ -20,9 +20,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -94,7 +98,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -116,9 +120,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -190,7 +198,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -212,9 +220,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -286,7 +298,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -308,9 +320,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -382,7 +398,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -404,9 +420,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -478,7 +498,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -500,9 +520,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -574,7 +598,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -596,9 +620,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -670,7 +698,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -692,9 +720,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -766,7 +798,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -788,9 +820,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -862,7 +898,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -884,9 +920,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -958,7 +998,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -980,9 +1020,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1054,7 +1098,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1076,9 +1120,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1150,7 +1198,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1172,9 +1220,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1246,7 +1298,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1268,9 +1320,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1342,7 +1398,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1364,9 +1420,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1438,7 +1498,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1460,9 +1520,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1534,7 +1598,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1556,9 +1620,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1630,7 +1698,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1652,9 +1720,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1726,7 +1798,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1748,9 +1820,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1822,7 +1898,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1844,9 +1920,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){
@@ -1918,7 +1998,7 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef flow {
+}//end reserveDatadef fnr {
 
 def token = login()
 echo token
@@ -1940,9 +2020,13 @@ if (modelKeyId = 0) {
   def modelKeyId = findData(2387, 2388, 212, DigitalBank)
    echo modelKeyId
 }
-
+// reserve the data
 def reservationId = reserveData(2387, 2388, 212, DigitalBank, modelKeyId)
 
+// get the login (email address) to return
+def execId = fetchData(2387, 2388, reservationId)
+
+return execId
 }
 
 def login(){

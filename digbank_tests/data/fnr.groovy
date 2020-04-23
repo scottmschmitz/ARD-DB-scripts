@@ -29,6 +29,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -38,7 +39,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -52,7 +54,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -78,14 +81,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -97,7 +102,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -128,6 +134,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -137,7 +144,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -151,7 +159,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -177,14 +186,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -196,7 +207,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -227,6 +239,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -236,7 +249,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -250,7 +264,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -276,14 +291,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -295,7 +312,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -326,6 +344,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -335,7 +354,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -349,7 +369,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -375,14 +396,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -394,7 +417,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -425,6 +449,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -434,7 +459,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -448,7 +474,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -474,14 +501,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -493,7 +522,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -524,6 +554,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -533,7 +564,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -547,7 +579,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -573,14 +606,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -592,7 +627,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -623,6 +659,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -632,7 +669,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -646,7 +684,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -672,14 +711,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -691,7 +732,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -722,6 +764,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -731,7 +774,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -745,7 +789,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -771,14 +816,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -790,7 +837,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -821,6 +869,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -830,7 +879,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -844,7 +894,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -870,14 +921,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -889,7 +942,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -920,6 +974,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -929,7 +984,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -943,7 +999,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -969,14 +1026,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -988,7 +1047,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1019,6 +1079,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1028,7 +1089,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1042,7 +1104,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1068,14 +1131,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1087,7 +1152,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1118,6 +1184,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1127,7 +1194,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1141,7 +1209,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1167,14 +1236,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1186,7 +1257,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1217,6 +1289,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1226,7 +1299,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1240,7 +1314,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1266,14 +1341,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1285,7 +1362,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1316,6 +1394,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1325,7 +1404,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1339,7 +1419,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1365,14 +1446,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1384,7 +1467,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1415,6 +1499,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1424,7 +1509,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1438,7 +1524,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1464,14 +1551,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1483,7 +1572,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1514,6 +1604,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1523,7 +1614,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1537,7 +1629,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1563,14 +1656,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1582,7 +1677,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1613,6 +1709,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1622,7 +1719,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1636,7 +1734,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1662,14 +1761,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1681,7 +1782,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1712,6 +1814,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1721,7 +1824,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1735,7 +1839,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1761,14 +1866,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1780,7 +1887,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1811,6 +1919,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1820,7 +1929,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1834,7 +1944,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1860,14 +1971,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1879,7 +1992,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -1910,6 +2024,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -1919,7 +2034,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -1933,7 +2049,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -1959,14 +2076,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',
@@ -1978,7 +2097,8 @@ def login(){
                 echo response.content + ' ' + reservationId
 	return reservationId
         }
-}//end reserveDatadef fnr = {
+}//end reserveData
+def fnr = {
 
 def token = login()
 echo token
@@ -2009,6 +2129,7 @@ def execId = fetchData(2387, 2388, reservationId)
 return execId
 }//end fnr
 
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'
@@ -2018,7 +2139,8 @@ def login(){
               echo timestamp.toString()
               token = body['token']
               return token
-    } //end logindef findData(String projectId, String versionId, String modelId, String environmentId){
+    } //end login
+def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
@@ -2032,7 +2154,8 @@ def login(){
 // To Do: parse for modelKeyId
 	modelKeyId = body['id']
 	return modelKeyId
-    }//end findDatadef publishData(String projectId, String versionId, String generatorId){
+    }//end findData
+def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
       "description":"Publish using api",
@@ -2058,14 +2181,16 @@ def login(){
     def body = readJSON file: '', text: response.content
     def jobId = body['jobId']
     return jobId
-}//end publishDatadef CheckStatus(String jobId)
+}//end publishData
+def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
     requestBody: request, url: 'https://scotts-tdm-serv:8443/TDMJobService/api/ca/v1/jobs/'jobId
     def body = readJSON file: '', text: response.content
     def status = body['status']
     return status
-}//end CheckStatusdef reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
+}//end CheckStatus
+def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{
       "dataModelId": '''+ modelId +''',

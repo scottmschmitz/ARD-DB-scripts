@@ -33,6 +33,9 @@ execId = fetchData(2387, 2388, reservationId)
 
 return execId
 }//end fnr
+
+return this
+
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
               url: 'https://scotts-tdm-serv:8443/TestDataManager/user/login'

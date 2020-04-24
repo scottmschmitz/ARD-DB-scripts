@@ -5,10 +5,17 @@ def jobId=''
 def status=''
 def reservationId=''
 def execId=''
+def projectId = '2387'
+def versionId = '2388'
+def modelId = '212'
+def environmentId = '206'
 def token = login()
+
 echo 'Token: ' +token
 
-def modelKeyId = findData(2387,2388,212,206,token)
+def modelKeyId = findData()
+
+// def modelKeyId = findData(2387,2388,212,206,token)
 echo 'modelKeyId: ' +modelKeyId
 
 //if (modelKeyId == 0) {
@@ -47,24 +54,23 @@ def login(){
               return token
     } //end login
 
-//def findData(){ 
-def findData(String projectId, String versionId, String modelId, String environmentId,String token){
+def findData(){ 
+//def findData(String projectId, String versionId, String modelId, String environmentId,String token){
 echo 'projectID: ' +projectID+ ' versionId: ' +versionId+ ' modelId: ' +modelId+ ' environmentId: ' +environmentId+ 'token: ' +token
-//              def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
-//                requestBody: '''{
-//                              "environmentId": '''+ environmentId +''',
-// ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
-//                              "includeReservedRecords": false,
-//                              "startAfterValues": {}
-//                              }''',
-//              url: 'SDS:https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
-//              def body = readJSON file: '', text: response.content
-//              echo response.content
-// To Do: parse for modelKeyId
-//	modelKeyId = body['id']
-	modelKeyId = 'returnfrom findData'
+              def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
+                requestBody: '''{
+                              "environmentId": '''+ environmentId +''',
+ ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],                              "includeReservedRecords": false,
+                              "startAfterValues": {}
+                              }''',
+             url: 'https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
+              def body = readJSON file: '', text: response.content
+              echo response.content
+// parse for modelKeyId
+	modelKeyId = body['id']
+//	modelKeyId = 'returnfrom findData'
 	return modelKeyId
- }//end findData
+}//end findData
     
 def publishData(String projectId, String versionId, String generatorId){
     def request = '''{

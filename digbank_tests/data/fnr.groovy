@@ -46,6 +46,7 @@ def login(){
               token = body['token']
               return token
     } //end login
+    
 def findData(String projectId, String versionId, String modelId, String environmentId){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
@@ -61,6 +62,7 @@ def findData(String projectId, String versionId, String modelId, String environm
 	modelKeyId = body['id']
 	return modelKeyId
     }//end findData
+    
 def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",
@@ -88,6 +90,7 @@ def publishData(String projectId, String versionId, String generatorId){
     def jobId = body['jobId']
     return jobId
 }//end publishData
+
 def CheckStatus(String jobId)
 {
  def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',
@@ -96,6 +99,7 @@ def CheckStatus(String jobId)
     def status = body['status']
     return status
 }//end CheckStatus
+
 def reserveData(String projectId, String versionId, String modelId, String environmentId, String modelKeyId){
                 //def authorization = 'Bearer '+token
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' ]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: '''{

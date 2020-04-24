@@ -8,7 +8,7 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
-modelKeyId = findData(2387, 2388, 212, 206, token)
+modelKeyId = findData()
 echo modelKeyId
 
 if (modelKeyId == 0) {
@@ -36,8 +36,13 @@ return execId
 
 return this
  
-def findData(String projectId, String versionId, String modelId, String environmentId,String token){
+def findData(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
+ projectID=2387
+ versionId=2388
+ modelId=212
+ environmentId=206 
+ 
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
  ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],

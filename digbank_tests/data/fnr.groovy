@@ -1,4 +1,4 @@
-def fnr = {
+def fnr() {
 
 def modelKeyId=''
 def jobId=''

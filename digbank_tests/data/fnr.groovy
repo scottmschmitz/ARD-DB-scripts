@@ -47,7 +47,7 @@ def login(){
               return token
     } //end login
 
-def findData()    
+def findData(){ 
 //def findData(String projectId, String versionId, String modelId, String environmentId,String token){
 //              def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
 //                requestBody: '''{
@@ -63,7 +63,7 @@ def findData()
 //	modelKeyId = body['id']
 	modelKeyId = 'returnfrom findData'
 	return modelKeyId
-    }//end findData
+ }//end findData
     
 def publishData(String projectId, String versionId, String generatorId){
     def request = '''{

@@ -9,7 +9,7 @@ def token = login()
 echo 'Token: ' +token
 
 def modelKeyId = findData()
-echo 'modelKeyId: " +modelKeyId
+echo 'modelKeyId: ' +modelKeyId
 
 //if (modelKeyId == 0) {
 // no record found, must Generate new record

@@ -1,6 +1,6 @@
 def fnr() {
 
-def modelKeyId=''
+//def modelKeyId=''
 def jobId=''
 def status=''
 def reservationId=''
@@ -8,7 +8,8 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
-modelKeyId = findData()
+echo 'Call findData()'
+def modelKeyId = findData()
 echo modelKeyId
 
 if (modelKeyId == 0) {

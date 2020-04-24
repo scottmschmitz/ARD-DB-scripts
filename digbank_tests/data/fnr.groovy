@@ -1,15 +1,18 @@
 def fnr() {
 
-def modelKeyId=''
+// def modelKeyId=''
 def jobId=''
 def status=''
 def reservationId=''
 def execId=''
-def token = login()
-echo token
 
-modelKeyId = findData(2387, 2388, 212, 206)
-echo modelKeyId
+echo 'Call login'
+def token = login()
+echo 'Token' + token
+
+echo 'Call findData'
+def modelKeyId = findData(2387, 2388, 212, 206)
+echo 'ModelKeyId' + modelKeyId
 
 if (modelKeyId == 0) {
 // no record found, must Generate new record

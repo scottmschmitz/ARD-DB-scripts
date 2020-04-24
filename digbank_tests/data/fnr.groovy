@@ -37,13 +37,12 @@ return execId
 return this
  
 def findData(){
-              def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
  projectID=2387
  versionId=2388
  modelId=212
- environmentId=206 
- 
-                requestBody: '''{
+ environmentId=206  
+              def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
+              requestBody: '''{
                               "environmentId": '''+ environmentId +''',
  ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,

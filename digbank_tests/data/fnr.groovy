@@ -55,11 +55,11 @@ def findData(String projectId, String versionId, String modelId, String environm
 			  echo 'findData request created'
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: request,url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/testDataModels/212/actions/find?projectId=2383&versionId=2384'
-              def body = readJSON file: '', text: response.content
+              //def body = readJSON file: '', text: response.content
               echo 'response.content'
               echo response.content
               def json = new JsonSlurper().parseText(response.content)
-              def mymodelKeyId = json.modelKeys.id[0]
+              def mymodelKeyId = json.records.attributes.modelKeys.id[0]
               echo mymodelKeyId
 // parse for modelKeyId
 	//modelKeyId = body['id']

@@ -59,7 +59,7 @@ def findData(String projectId, String versionId, String modelId, String environm
               // echo 'response.content'
               // echo response.content
               def json = new JsonSlurper().parseText(response.content)
-              def mymodelKeyId = json.records.attributes.modelKeys.id[0]
+              mymodelKeyId = json.records.attributes[0].modelKeys.id
               echo 'mymodelKeyId'
               echo mymodelKeyId
 // parse for modelKeyId

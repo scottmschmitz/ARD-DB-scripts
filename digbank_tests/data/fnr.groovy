@@ -8,7 +8,7 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
-modelKeyId = findData(2387, 2388, 212, 206, token)
+modelKeyId = findData("2383", "2384", "212", "206", token)
 echo modelKeyId
 
 if (modelKeyId == 0) {
@@ -22,14 +22,14 @@ if (modelKeyId == 0) {
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  modelKeyId = findData(2387, 2388, 212, 206, token)
+  modelKeyId = findData("2383", "2384", "212", "206", token)
    echo modelKeyId
 }
 // reserve the data
-reservationId = reserveData(2387, 2388, 212, 206, modelKeyId)
+reservationId = reserveData("2383", "2384", "212", "206", modelKeyId)
 
 // get the login (email address) to return
-execId = fetchData(2387, 2388, reservationId)
+execId = fetchData("2383", "2384", reservationId)
 
 return execId
 }//end fnr

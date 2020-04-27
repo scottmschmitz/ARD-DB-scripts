@@ -49,8 +49,7 @@ def login(){
     } //end login
 def findData(String projectId, String versionId, String modelId, String environmentId,String token){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
-                requestBody: "{"environmentId":"206","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]
-                              }",
+                requestBody: "{"environmentId":"206","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}",
               url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/212/actions/find?projectId=2387&versionId=2388'
               def body = readJSON file: '', text: response.content
               echo response.content

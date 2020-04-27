@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 def fnr() {
 
 def modelKeyId=''
@@ -54,11 +56,15 @@ def findData(String projectId, String versionId, String modelId, String environm
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: request,url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/testDataModels/212/actions/find?projectId=2383&versionId=2384'
               def body = readJSON file: '', text: response.content
+              echo 'response.content'
               echo response.content
-              echo 'resonse.content'
+              def json = new JsonSlurper().parseText(response.content)
+              def mymodelKeyId = json.modelKeys.id[0]
+              echo mymodelKeyId
 // parse for modelKeyId
-	modelKeyId = body['id']
-	return modelKeyId
+	//modelKeyId = body['id']
+	//return modelKeyId
+	return mymodelKeyId
     }//end findData
 def publishData(String projectId, String versionId, String generatorId){
     def request = '''{

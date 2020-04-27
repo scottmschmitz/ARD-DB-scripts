@@ -1,47 +1,41 @@
 def fnr() {
 
-// def modelKeyId=''
+def modelKeyId=''
 def jobId=''
 def status=''
 def reservationId=''
 def execId=''
-def projectId = '2387'
-def versionId = '2388'
-def modelId = '212'
-def environmentId = '206'
 def token = login()
-
 echo 'Token: ' +token
 
-def modelKeyId = findData()
+modelKeyId = findData(2387, 2388, 212, 206, token)
+echo modelKeyId
 
-// def modelKeyId = findData(2387,2388,212,206,token)
-echo 'modelKeyId: ' +modelKeyId
-
-//if (modelKeyId == 0) {
+if (modelKeyId == 0) {
 // no record found, must Generate new record
-//   jobId = publishData(2387, 2388, 2398)     
+   jobId = publishData(2387, 2388, 2398)     
 // loop checking status of jobID until Complete
 
-//  while (status != 'Completed') {
+  while (status != 'Completed') {
     // Check job status
-//    sleep(500)
-//    status=CheckStatus(jobid)
-//    }
+    sleep(500)
+    status=CheckStatus(jobid)
+    }
   // generate complete, find Data again
- // modelKeyId = findData(2387, 2388, 212, 206)
- //  echo modelKeyId
-//}
+  modelKeyId = findData(2387, 2388, 212, 206)
+   echo modelKeyId
+}
 // reserve the data
-//reservationId = reserveData(2387, 2388, 212, 206, modelKeyId)
+reservationId = reserveData(2387, 2388, 212, 206, modelKeyId)
 
 // get the login (email address) to return
-//execId = fetchData(2387, 2388, reservationId)
-execId = 'aherchy@idemo.io'
+execId = fetchData(2387, 2388, reservationId)
+
 return execId
 }//end fnr
 
 return this
+
 
 def login(){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Basic QWRtaW5pc3RyYXRvcjptYXJtaXRl']], httpMode: 'POST', outputFile: 'test.txt',
@@ -53,25 +47,21 @@ def login(){
               token = body['token']
               return token
     } //end login
-
-def findData(){ 
-//def findData(String projectId, String versionId, String modelId, String environmentId,String token){
-echo 'projectID: ' +projectId+ ' versionId: ' +versionId+ ' modelId: ' +modelId+ ' environmentId: ' +environmentId+ 'token: ' +token
+def findData(String projectId, String versionId, String modelId, String environmentId,String token){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
                               "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],                              "includeReservedRecords": false,
+ ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
+                              "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
-             url: 'https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
+              url: 'SDS:https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
               def body = readJSON file: '', text: response.content
               echo response.content
-// parse for modelKeyId
+// To Do: parse for modelKeyId
 	modelKeyId = body['id']
-//	modelKeyId = 'returnfrom findData'
 	return modelKeyId
-}//end findData
-    
+    }//end findData
 def publishData(String projectId, String versionId, String generatorId){
     def request = '''{
       "name":"Generate new records",

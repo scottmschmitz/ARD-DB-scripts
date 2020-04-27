@@ -22,7 +22,7 @@ if (modelKeyId == 0) {
     status=CheckStatus(jobid)
     }
   // generate complete, find Data again
-  modelKeyId = findData(2387, 2388, 212, 206)
+  modelKeyId = findData(2387, 2388, 212, 206, token)
    echo modelKeyId
 }
 // reserve the data
@@ -50,12 +50,12 @@ def login(){
 def findData(String projectId, String versionId, String modelId, String environmentId,String token){
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: '''{
-                              "environmentId": '''+ environmentId +''',
- ,"filters":[{"attributeName":''' +  +''',"entityName":"id","schema":"user_profile","dataSource":"dbo","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
+                              "environmentId":"206",
+ ,"filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}],
                               "includeReservedRecords": false,
                               "startAfterValues": {}
                               }''',
-              url: 'SDS:https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
+              url: 'https://scotts-tdm-serv/TDMDataReservationService/api/ca/v1/testDataModels/212/actions/find?projectId=2387&versionId=2388
               def body = readJSON file: '', text: response.content
               echo response.content
 // To Do: parse for modelKeyId

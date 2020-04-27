@@ -48,7 +48,7 @@ def login(){
     } //end login
 def findData(String projectId, String versionId, String modelId, String environmentId,String token){
 			  echo 'Made it into findData'
-			  def request = "{"environmentId":"206","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}"
+			  def request = '{"environmentId":"206","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}'
 			  echo request
 			  echo 'findData request created'
               def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',

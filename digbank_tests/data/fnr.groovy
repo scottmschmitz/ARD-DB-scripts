@@ -105,6 +105,6 @@ def fetchData(projectId, versionId, reservationId, token){
 def syncData(projectId, versionId, modelId, token){
 	def request = '{}'
 	def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
-    url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/startSync?projectId='+projectId+'&versionId='+ versionId
+    url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/syncTasks/actions/startSync?projectId='+projectId+'&versionId='+ versionId
 //	https://localhost:8443/TDMDataReservationService/api/ca/v1/testDataModels/212/syncTasks/actions/startSync?projectId=2383&versionId=2384
 	}

@@ -10,6 +10,8 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
+syncData(2383, 2384, 212, token)
+sleep(2)
 modelKeyId = findData(2383, 2384, 212, 206, token)
 echo 'modelKeyId returned: '+modelKeyId
 
@@ -23,6 +25,9 @@ if (modelKeyId == 0) {
     sleep(2)
     status=CheckStatus(jobid)
     }
+  // generate complete, pre-fetch data into Find & Reserve cache
+  syncData(2383, 2384, 212, token)
+  sleep(2)
   // generate complete, find Data again
   modelKeyId = findData(2383, 2384, 212, 206, token)
    echo modelKeyId
@@ -50,7 +55,7 @@ def login(){
     } //end login
 def findData(projectId, versionId, modelId,  environmentId, token){
     def request = '{"environmentId":"'+environmentId+'","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}'           
-echo request
+    echo request
 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: request,
               url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
@@ -97,3 +102,9 @@ def fetchData(projectId, versionId, reservationId, token){
   echo 'execId: '+execId
 	return execId
 }//end fetchData
+def syncData(projectId, versionId, modelId, token){
+	def request = '{}'
+	def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
+    url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/startSync?projectId='+projectId+'&versionId='+ versionId
+//	https://localhost:8443/TDMDataReservationService/api/ca/v1/testDataModels/212/syncTasks/actions/startSync?projectId=2383&versionId=2384
+	}

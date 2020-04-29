@@ -94,5 +94,4 @@ def fetchData(projectId, versionId, reservationId, token){
   execId = json.records.attributes[0].value[0]
   echo 'execId: '+execId
 	return execId
-        }
 }//end fetchData

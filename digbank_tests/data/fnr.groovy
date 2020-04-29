@@ -38,7 +38,7 @@ echo 'reservationId returned: '+reservationId
 // intermittent 404 error if no delay
 sleep(2)
 // get the login (email address) to return
-execId = fetchData(2383, 2384, token, reservationId)
+execId = fetchData(2383, 2384, reservationId, token)
 
 return execId
 }//end fnr

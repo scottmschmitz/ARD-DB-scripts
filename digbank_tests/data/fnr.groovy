@@ -50,11 +50,11 @@ def login(){
     } //end login
 def findData(projectId, versionId, modelId,  environmentId, token){
     def request = '{"environmentId":"'+environmentId+'","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}'           
-echo 'request: "+request
+echo request
 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: request,
               url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
-			  echo 'response: '+response.content
+			  echo response.content
               def json = new JsonSlurper().parseText(response.content)
               modelKeyId = json.records.modelKeys[0].id
               echo 'mymodelKeyId: '+modelKeyId

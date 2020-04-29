@@ -93,13 +93,16 @@ url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/reservati
 	return reservationId
 }//end reserveData
 def fetchData(projectId, versionId, reservationId, token){
+    echo 'fetchData'
 	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
-                def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'GET', responseHandle: 'LEAVE_OPEN',requestBody: request,
+    echo request
+    def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
     url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/reservations/'+reservationId+'/reservedData/actions/fetch?projectId='+projectId+'&versionId='+ versionId
-// extract emailID attribute from response  
-  def json = new JsonSlurper().parseText(response.content)
-  execId = json.records.attributes[0].value[0]
-  echo 'execId: '+execId
+// extract emailID attribute from response 
+    echo response.content 
+    def json = new JsonSlurper().parseText(response.content)
+    execId = json.records.attributes[0].value[0]
+    echo 'execId: '+execId
 	return execId
 }//end fetchData
 def syncData(projectId, versionId, modelId, token){

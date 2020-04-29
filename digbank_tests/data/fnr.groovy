@@ -10,8 +10,11 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
+//pre-fetch data to populate find & reserve cache
 syncData(2383, 2384, 212, token)
 sleep(2)
+
+//find matching data based on variable settings
 modelKeyId = findData(2383, 2384, 212, 206, token)
 echo 'modelKeyId returned: '+modelKeyId
 
@@ -25,10 +28,10 @@ if (modelKeyId == 0) {
     sleep(2)
     status=CheckStatus(jobid)
     }
-  // generate complete, pre-fetch data into Find & Reserve cache
+  //pre-fetch data to populate find & reserve cache
   syncData(2383, 2384, 212, token)
   sleep(2)
-  // generate complete, find Data again
+  // generate & cache complete, find Data again
   modelKeyId = findData(2383, 2384, 212, 206, token)
    echo modelKeyId
 }
@@ -38,7 +41,7 @@ echo 'reservationId returned: '+reservationId
 // intermittent 404 error if no delay
 sleep(2)
 // get the login (email address) to return
-execId = fetchData(2383, 2384, reservationId, token)
+execId = fetchData(2383, 2384,  reservationId, token,)
 
 return execId
 }//end fnr
@@ -55,11 +58,9 @@ def login(){
     } //end login
 def findData(projectId, versionId, modelId,  environmentId, token){
     def request = '{"environmentId":"'+environmentId+'","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}'           
-    echo request
 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
                 requestBody: request,
               url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/testDataModels/'+ modelId +'/actions/find?projectId='+ projectId +'&versionId='+ versionId
-			  echo response.content
               def json = new JsonSlurper().parseText(response.content)
               modelKeyId = json.records.modelKeys[0].id
               echo 'mymodelKeyId: '+modelKeyId
@@ -93,21 +94,13 @@ url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/reservati
 	return reservationId
 }//end reserveData
 def fetchData(projectId, versionId, reservationId, token){
-    echo 'fetchData'
-	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"email_address","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
-    echo request
-    def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
+	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
+                def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
     url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/reservations/'+reservationId+'/reservedData/actions/fetch?projectId='+projectId+'&versionId='+ versionId
-// extract emailID attribute from response 
-    echo response.content 
-    def json = new JsonSlurper().parseText(response.content)
-    execId = json.records.attributes[0].value[0]
-    echo 'execId: '+execId
+// fetch attribute information about reserved record from response  
+  def json = new JsonSlurper().parseText(response.content)
+// get the returned email id to use for Digital Bank login in
+  execId = json.records.attributes[0].value[0]
+  echo 'execId: '+execId
 	return execId
 }//end fetchData
-def syncData(projectId, versionId, modelId, token){
-	def request = '{}'
-	def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
-    url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/syncTasks/actions/startSync?projectId='+projectId+'&versionId='+ versionId
-//	https://localhost:8443/TDMDataReservationService/api/ca/v1/testDataModels/212/syncTasks/actions/startSync?projectId=2383&versionId=2384
-	}

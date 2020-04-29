@@ -104,3 +104,9 @@ def fetchData(projectId, versionId, reservationId, token){
   echo 'execId: '+execId
 	return execId
 }//end fetchData
+def syncData(projectId, versionId, modelId, token){
+	def request = '{}'
+	def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
+    url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/syncTasks/actions/startSync?projectId='+projectId+'&versionId='+ versionId
+// no return, just a poke on the Portal
+	}

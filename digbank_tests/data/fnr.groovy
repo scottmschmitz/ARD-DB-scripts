@@ -94,7 +94,7 @@ url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/reservati
 }//end reserveData
 def fetchData(projectId, versionId, reservationId, token){
     echo 'fetchData'
-	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
+	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"email_address","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
     echo request
     def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
     url: 'https://scotts-tdm-serv:8443/TDMFindReserveService/api/ca/v1/reservations/'+reservationId+'/reservedData/actions/fetch?projectId='+projectId+'&versionId='+ versionId

@@ -56,7 +56,6 @@ def login(){
               token = body['token']
               return token
     } //end login
-    
 def findData(projectId, versionId, modelId,  environmentId, token){
     def request = '{"environmentId":"'+environmentId+'","filters":[{"attributeName":"id","entityName":"user_profile","schema":"dbo","dataSource":"SDS","operator":"GREATER_THAN_OR_EQUAL_TO","values":["1000"]}]}'           
 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',
@@ -67,7 +66,6 @@ def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorizati
               echo 'mymodelKeyId: '+modelKeyId
               return modelKeyId
     }//end findData
-    
 def publishData(projectId, versionId, generatorId, token){
     def request = '{"name":"Generate new records","description":"Publish using api","projectId":'+projectId+',"versionId":'+versionId+',"type":"PUBLISHJOB","origin":"generation","jobs":[],"parameters":{"generatorId":'+generatorId+',"jobType":"PUBLISH","title":"Publish using Jenkins","publishTo":"TGT","target":"dbo","dataTargetProfile":"SDS","repeatCount":1}}'
 
@@ -77,7 +75,6 @@ def publishData(projectId, versionId, generatorId, token){
     def jobId = body['jobId']
     return jobId
 }//end publishData
-
 def CheckStatus(jobId)
 {
  def request='{}'
@@ -87,7 +84,6 @@ def CheckStatus(jobId)
     def status = body['status']
     return status
 }//end CheckStatus
-
 def reserveData(projectId, versionId, modelId, environmentId, modelKeyId, token){
 	def request = '{"reservationName":"EphemeralReservation","dataModelId":'+modelId+',"environmentId":'+environmentId+',"resources":[{"dataModelId":'+modelId+',"modelKeys":{"id":"'+modelKeyId+'"}}]}'
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer ' +token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request, 
@@ -97,7 +93,6 @@ url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/reservati
                 echo 'reservationId:  '+reservationId
 	return reservationId
 }//end reserveData
-
 def fetchData(projectId, versionId, reservationId, token){
 	def request = '{"page":1,"size":100,"attributes":[{"attributeName":"email_address","entityName":"user_profile","schema":"dbo","dataSource":"SDS"}]}'
                 def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
@@ -109,10 +104,9 @@ def fetchData(projectId, versionId, reservationId, token){
   echo 'execId: '+execId
 	return execId
 }//end fetchData
-
 def syncData(projectId, versionId, modelId, token){
 	def request = '{}'
 	def response = httpRequest customHeaders: [[maskValue: false, name: 'Authorization', value: 'Bearer '+token]],contentType: 'APPLICATION_JSON', httpMode: 'POST', responseHandle: 'LEAVE_OPEN',requestBody: request,
     url: 'https://scotts-tdm-serv:8443/TDMDataReservationService/api/ca/v1/testDataModels/'+modelId+'/syncTasks/actions/startSync?projectId='+projectId+'&versionId='+ versionId
-// no return, just a poke on the Portal
+// no return, just a poke on the Portal to refresh the Find cache
 	}

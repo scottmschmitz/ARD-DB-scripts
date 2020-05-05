@@ -4,7 +4,7 @@ scenarios:
   Create Savings Account TC 1 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -23,7 +23,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 278, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '406'
@@ -36,7 +36,7 @@ scenarios:
   Create Savings Account TC 2 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -55,7 +55,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -49, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -68,7 +68,7 @@ scenarios:
   Create Savings Account TC 3 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -87,7 +87,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 2500, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -100,7 +100,7 @@ scenarios:
   Create Savings Account TC 4 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -119,7 +119,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 3941, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -132,7 +132,7 @@ scenarios:
   Create Savings Account TC 5 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -151,7 +151,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 25, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -164,7 +164,7 @@ scenarios:
   Create Savings Account TC 6 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -183,7 +183,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 66, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -196,7 +196,7 @@ scenarios:
   Create Savings Account TC 7 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -215,7 +215,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 1, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '406'
@@ -228,7 +228,7 @@ scenarios:
   Create Savings Account TC 8 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -247,7 +247,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -1, "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -260,7 +260,7 @@ scenarios:
   Create Savings Account TC 9 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -279,7 +279,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "IND" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -292,7 +292,7 @@ scenarios:
   Create Savings Account TC 10 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -311,7 +311,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 824, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '406'
@@ -324,7 +324,7 @@ scenarios:
   Create Savings Account TC 11 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -343,7 +343,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": -57, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -356,7 +356,7 @@ scenarios:
   Create Savings Account TC 12 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -375,7 +375,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 2500, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -388,7 +388,7 @@ scenarios:
   Create Savings Account TC 13 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -407,7 +407,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "MMA", "openingDeposit": 3040, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -420,7 +420,7 @@ scenarios:
   Create Savings Account TC 14 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -439,7 +439,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 25, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -452,7 +452,7 @@ scenarios:
   Create Savings Account TC 15 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -471,7 +471,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 852, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '200'
@@ -484,7 +484,7 @@ scenarios:
   Create Savings Account TC 16 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -503,7 +503,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": 22, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '406'
@@ -516,7 +516,7 @@ scenarios:
   Create Savings Account TC 17 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -535,7 +535,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "SAV", "openingDeposit": -64, "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -548,7 +548,7 @@ scenarios:
   Create Savings Account TC 18 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -567,7 +567,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "JNT" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -580,7 +580,7 @@ scenarios:
   Create Savings Account TC 19 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -599,7 +599,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -612,7 +612,7 @@ scenarios:
   Create Savings Account TC 20 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -631,7 +631,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -644,7 +644,7 @@ scenarios:
   Create Savings Account TC 21 :
     follow-redirects: true
     requests:
-      - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
+      - url: '${BASE_URL}/api/v1/auth?username=&password='
         method: POST
         label: 1. Authenticate API User
         headers:
@@ -663,7 +663,7 @@ scenarios:
         headers:
           Authorization: Bearer ${authToken}
           Content-Type: application/json
-        body: '{ "accountName": "AKP Savings %)*%)(", "accountTypeCode": "", "openingDeposit": , "ownerTypeCode": "" }'
+        body: '{ "accountName": "^data_acct_name^", "accountTypeCode": "^data_acct_type^", "openingDeposit": ^data_init_deposit^, "ownerTypeCode": "^data_acct_ownership^" }'
         assert:
          - contains:
            - '400'
@@ -672,3 +672,5 @@ scenarios:
            assume-success: true
     data-sources:
     - data.csv
+
+

@@ -116,8 +116,3 @@ execution:
     ramp-up: 1s
     hold-for: 2m
     iterations: -1
-  - scenario: Create Savings Account TC 22 
-    concurrency: 2
-    ramp-up: 1s
-    hold-for: 2m
-    iterations: -1

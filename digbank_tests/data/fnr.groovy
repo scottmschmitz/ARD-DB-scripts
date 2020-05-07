@@ -10,7 +10,6 @@ def execId=''
 def token = login()
 echo 'Token: ' +token
 
-// a demo script
 //pre-fetch data to populate find & reserve cache
 syncData(2383, 2384, 212, token)
 sleep(8)

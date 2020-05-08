@@ -6,4 +6,5 @@ modules:
     workspace: Scott S
     project: DigitalBank
     locations: us-east1-b
+    default-location: us-east1-b
     

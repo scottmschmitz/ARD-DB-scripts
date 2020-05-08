@@ -5,5 +5,5 @@ modules:
     account: SE Demo
     workspace: Scott S
     project: DigitalBank
-    default-location: us-east1-b
+    locations: us-east1-b
     

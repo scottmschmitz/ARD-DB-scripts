@@ -11,6 +11,8 @@ modules:
     report-name: CreateSavingsAccount Test Report
     test: CreateSavingsAccount Test
 execution:
+  - locations:
+       us-east1-b: 1
   - scenario: Create Savings Account TC 1 
     concurrency: 2
     ramp-up: 1s

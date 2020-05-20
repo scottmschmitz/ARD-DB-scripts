@@ -5,5 +5,4 @@ modules:
     account: SE Demo
     workspace: Scott S
     project: DigitalBank
-
-    
+    locations: harbor-5ec418dba3063b22d95e3b16

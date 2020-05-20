@@ -4,7 +4,8 @@ scenarios:
 
   Create Savings Account TC 1 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -37,7 +38,8 @@ scenarios:
 
   Create Savings Account TC 2 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -70,7 +72,8 @@ scenarios:
 
   Create Savings Account TC 3 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -103,7 +106,8 @@ scenarios:
 
   Create Savings Account TC 4 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -136,7 +140,8 @@ scenarios:
 
   Create Savings Account TC 5 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -169,7 +174,8 @@ scenarios:
 
   Create Savings Account TC 6 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -202,7 +208,8 @@ scenarios:
 
   Create Savings Account TC 7 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -235,7 +242,8 @@ scenarios:
 
   Create Savings Account TC 8 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -268,7 +276,8 @@ scenarios:
 
   Create Savings Account TC 9 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -301,7 +310,8 @@ scenarios:
 
   Create Savings Account TC 10 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -334,7 +344,8 @@ scenarios:
 
   Create Savings Account TC 11 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -367,7 +378,8 @@ scenarios:
 
   Create Savings Account TC 12 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -400,7 +412,8 @@ scenarios:
 
   Create Savings Account TC 13 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -433,7 +446,8 @@ scenarios:
 
   Create Savings Account TC 14 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -466,7 +480,8 @@ scenarios:
 
   Create Savings Account TC 15 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -499,7 +514,8 @@ scenarios:
 
   Create Savings Account TC 16 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -532,7 +548,8 @@ scenarios:
 
   Create Savings Account TC 17 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -565,7 +582,8 @@ scenarios:
 
   Create Savings Account TC 18 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -598,7 +616,8 @@ scenarios:
 
   Create Savings Account TC 19 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -631,7 +650,8 @@ scenarios:
 
   Create Savings Account TC 20 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
@@ -664,7 +684,8 @@ scenarios:
 
   Create Savings Account TC 21 :
     follow-redirects: true
-    locations: harbor-5ec418dba3063b22d95e3b16: 1
+    locations: 
+      harbor-5ec418dba3063b22d95e3b16: 1
     requests:
       - url: '${BASE_URL}/api/v1/auth?username=${execId}&password=Demo123!'
         method: POST
